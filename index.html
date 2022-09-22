@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <!-- marker 위에 render 할 것 -->
+        <a-box position="0 1 0" material="color: #A7FAEB;">
+          <a-animation
+            attribute="rotation"
+            dur="5000"
+            to="360 360 0"
+            repeat="indefinite"
+            easing="linear"
+          ></a-animation>
+        </a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
