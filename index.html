@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
       <a-marker preset="hiro">
-        <!-- marker 위에 render 할 것 -->
-        <a-box position="0 1 0" material="color: #A7FAEB;">
+        <!-- marker 위에 render 할 것 : 중복 가능 -->
+        <a-image
+          src="pusil.png"
+          position="0 0.5 0"
+          scale="1 1 1"
+          rotation="3 3 3"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing : linear; elasticity : 300;"
+        >
+        </a-image>
+
+        <!--
+        <a-box
+          position="0 1 0"
+          material="opacity: 0.8; color: red;"
+          scale="1 1 1"
+        >
           <a-animation
             attribute="rotation"
             dur="5000"
@@ -15,6 +30,7 @@
             easing="linear"
           ></a-animation>
         </a-box>
+        -->
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
