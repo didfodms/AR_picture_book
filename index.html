@@ -9,44 +9,28 @@
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
-      <script>
-        AFRAME.registerComponent("character", {
-          schema: {
-            position: { default: "0 1 0", type: "vec3" },
-            rotation: { default: "-90 0 0", type: "vec3" },
-          },
-        });
-      </script>
       <a-assets>
         <!-- ... -->
-        <img id="groundTexture" src="https://i.imgur.com/9HpS3fd.png" />
-        <img id="pusil" src="https://i.imgur.com/ZXs0TKI.png" />
-        <img id="person" src="https://i.imgur.com/HzqM3eX.png" />
+        <img id="groundTexture" src="assets/book1/images/background/1.png" />
+        <img id="pusil" src="assets/book1/images/character/1-1.png" />
+        <img id="person" src="assets/book1/images/character/1-2.png" />
         <audio
           id="bg-music"
-          src="https://docs.google.com/uc?export=open&id=1axhcotu8NpitGdegKNxBE1NZkbMlH8We"
-          type="audio/wav"
+          src="./music.mp3"
+          type="audio/mp3"
           preload="auto"
         ></audio>
         <!-- ... -->
       </a-assets>
 
       <a-marker preset="hiro">
-        <!-- marker 위에 render 할 것 : 중복 가능 
-        <a-text
-          value="Hi. my name is rae-eun"
-          rotation="-90 0 0"
-          position="0 1 0"
-          scale="1 1 1"
-        ></a-text>
-        -->
-        <a-sound src="src: url('music.mp3')" autoplay="true"></a-sound>
+        <a-sound src="src: #bg-music" autoplay="true"></a-sound>
+
         <a-image
-          class="background"
           src="#groundTexture"
           rotation="-90 0 0"
           position="0 0 0"
-          scale="2 2 0"
+          scale="10 10 0"
         ></a-image>
 
         <a-entity rotation="-90 0 0" position="0 0.5 0">
@@ -55,7 +39,7 @@
             src="#pusil"
             position="-0.3 -0.3 0"
             rotation="0 0 0"
-            scale="0.5 0.5 0.5"
+            scale="1 1 1"
             animation__ggomul="property:scale; dir:alternate; dur:1000; from : 0.6 0.5 0.5; to:0.5 0.6 0.5; loop:true; easing:easeInOutQuad;"
             animation__move="property : position; dir:alternate; dur:1000; to: -0.3 1 0; loop:true; easing:easeInOutQuint;"
           ></a-image>
@@ -67,34 +51,11 @@
             src="#person"
             position="0.3 0 0"
             rotation="0 0 0"
-            scale="1 1.5 1"
+            scale="1 2 1"
             animation__ggomul="property:scale; dir:alternate; dur:500; from : 1.1 1.5 0.5; to:1.0 1.6 0.5; loop:true; easing:easeInOutQuad;"
             animation__turn="property : rotation; dur:1000; to: 0 360 0; loop:true; easing:linear;"
           ></a-image>
         </a-entity>
-
-        <!--
-          animation__turn="property : rotation; to : -90 360 0; loop:true; dur:1000; easing:linear;"
-animation__moveUpDown="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 -0.10 -2; loop: true"
-
-
-        <a-box
-          position="0 1 0"
-          material="opacity: 0.8; color: red;"
-          scale="1 1 1"
-        >
-          <a-animation
-            attribute="rotation"
-            dur="5000"
-            to="360 360 0"
-            repeat="indefinite"
-            easing="linear"
-          ></a-animation>
-        </a-box>
-
-        뺑글뺑글 돌기 애니메이션!
-        animation="property: rotation; to: 90 360 0; loop: true; dur: 1000; easing : linear;"
-        -->
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
