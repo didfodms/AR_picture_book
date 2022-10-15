@@ -30,7 +30,10 @@
       <a-assets>
         <!-- ... -->
         <img id="b1-p1-bg" src="assets/book1/page1/background.png" />
+        <img id="b1-p1-bg2" src="assets/book1/page1/background2.png" />
         <img id="b1-p1-ob" src="assets/book1/page1/object.png" />
+        <img id="b1-p1-o1" src="assets/book1/page1/object1.png" />
+        <img id="b1-p1-o2" src="assets/book1/page1/object2.png" />
 
         <audio
           id="b1-p1-so"
@@ -49,6 +52,34 @@
         <a-sound src="src: url(assets/book1/page1/sound.mp3)" autoplay="true">
         </a-sound>
         <a-image
+          src="#b1-p1-bg2"
+          position="0 2.5 0"
+          rotation="0 0 0"
+          scale="5 5 5"
+        ></a-image>
+        <a-image
+          src="#b1-p1-o1"
+          position="0 2.5 0.3"
+          rotation="0 0 0"
+          scale="5 5 5"
+          animation="property:scale; dir:alternate; dur:1000; to: 5.5 5 5; easing:easeInOutQuad; loop:true;"
+          animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
+        >
+        </a-image>
+        <a-image
+          src="#b1-p1-o2"
+          position="0 2.5 0.3"
+          rotation="0 0 0"
+          scale="5 5 5"
+          animation="property:scale; dir:alternate; dur:1000; to: 5.5 5 5; easing:easeInOutQuad; loop:true;"
+          animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
+        >
+        </a-image>
+      </a-marker>
+      <a-marker preset="kanji">
+        <!-- <a-sound src="src: url(assets/book1/page1/sound.mp3)" autoplay="true"> -->
+        </a-sound>
+        <a-image
           src="#b1-p1-bg"
           position="0 2.5 0"
           rotation="0 0 0"
@@ -60,6 +91,7 @@
           rotation="0 0 0"
           scale="5 5 5"
           animation="property:scale; dir:alternate; dur:1000; to: 5.5 5 5; easing:easeInOutQuad; loop:true;"
+          animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
         >
         </a-image>
       </a-marker>
