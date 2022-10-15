@@ -10,6 +10,26 @@
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
+      <!--
+      <script type="text/javascript">
+
+        function isMobile(){
+          var UserAgent = navigator.userAgent;
+
+          if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)  {
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+
+        if(isMobile()){
+          location.href = "/mobile/index.html";	//모바일페이지
+        }else{
+          location.href = "/main.html";		//PC용 페이지
+        }
+        </script>
       <script>
         AFRAME.registerPrimitive("a-background", {
           // Attaches the `ocean` component by default.
@@ -27,6 +47,7 @@
           },
         });
       </script>
+    -->
       <a-assets>
         <!-- ... -->
         <img id="b1-p1-bg" src="assets/book1/page1/background.png" />
