@@ -10,6 +10,26 @@
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
+      <!--
+      <script type="text/javascript">
+
+        function isMobile(){
+          var UserAgent = navigator.userAgent;
+
+          if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)  {
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+
+        if(isMobile()){
+          location.href = "/mobile/index.html";	//모바일페이지
+        }else{
+          location.href = "/main.html";		//PC용 페이지
+        }
+        </script>
       <script>
         AFRAME.registerPrimitive("a-background", {
           // Attaches the `ocean` component by default.
@@ -27,6 +47,7 @@
           },
         });
       </script>
+    -->
       <a-assets>
         <!-- ... -->
         <img id="b1-p1-bg" src="assets/book1/page1/background.png" />
@@ -51,30 +72,32 @@
       <a-marker preset="hiro">
         <a-sound src="src: url(assets/book1/page1/sound.mp3)" autoplay="true">
         </a-sound>
-        <a-image
-          src="#b1-p1-bg2"
-          position="0 2.5 0"
-          rotation="0 0 0"
-          scale="5 5 5"
-        ></a-image>
-        <a-image
-          src="#b1-p1-o1"
-          position="0 2.5 0.3"
-          rotation="0 0 0"
-          scale="5 5 5"
-          animation="property:scale; dir:alternate; dur:1000; to: 5.5 5 5; easing:easeInOutQuad; loop:true;"
-          animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
-        >
-        </a-image>
-        <a-image
-          src="#b1-p1-o2"
-          position="0 2.5 0.3"
-          rotation="0 0 0"
-          scale="5 5 5"
-          animation="property:scale; dir:alternate; dur:1000; to: 5.5 5 5; easing:easeInOutQuad; loop:true;"
-          animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
-        >
-        </a-image>
+        <a-entity rotation="-90 0 0">
+          <a-image
+            src="#b1-p1-bg2"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="10 10 10"
+          ></a-image>
+          <a-image
+            src="#b1-p1-o1"
+            position="0 2.5 0.3"
+            rotation="0 0 0"
+            scale="10 10 10"
+
+            animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
+          >
+          </a-image>
+          <a-image
+            src="#b1-p1-o2"
+            position="0 2.5 0.3"
+            rotation="0 0 0"
+            scale="10 10 10"
+
+            animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
+          >
+          </a-image>
+      </a-entity>
       </a-marker>
       <a-marker preset="kanji">
         <!-- <a-sound src="src: url(assets/book1/page1/sound.mp3)" autoplay="true"> -->
