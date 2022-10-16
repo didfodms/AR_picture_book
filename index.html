@@ -6,11 +6,10 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-    <script data-main="scripts/main" src="scripts/require.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
-      <!--
+      <!-- 모바일, pc버전 다르게 나타내는 코드
       <script type="text/javascript">
 
         function isMobile(){
@@ -30,26 +29,10 @@
           location.href = "/main.html";		//PC용 페이지
         }
         </script>
-      <script>
-        AFRAME.registerPrimitive("a-background", {
-          // Attaches the `ocean` component by default.
-          // Defaults the ocean to be parallel to the ground.
-          defaultComponents: {
-            background: {},
-            position: { x: 0, y: 0, z: 0 },
-            rotation: { x: -90, y: 0, z: 0 },
-            scale: { x: 5, y: 5, z: 0 },
-          },
-
-          // Maps HTML attributes to the `ocean` component's properties.
-          mappings: {
-            scale: "background.scale",
-          },
-        });
-      </script>
     -->
+
+      <!-- assets -->
       <a-assets>
-        <!-- ... -->
         <img id="b1-p1-bg" src="assets/book1/page1/background.png" />
         <img id="b1-p1-bg2" src="assets/book1/page1/background2.png" />
         <img id="b1-p1-ob" src="assets/book1/page1/object.png" />
@@ -64,13 +47,12 @@
         ></audio>
       </a-assets>
 
-      <!--
-      <a-sound src="src: url(click.mp3)" autoplay="true" position="0 0 0">
-      </a-sound>
-      -->
+      <!-- soundHandler.js -->
+      <script type="text/javascript" src="/scripts/soundHandler.js"></script>
 
-      <a-marker preset="hiro">
-        <a-sound src="src: url(assets/book1/page1/sound.mp3)" autoplay="true">
+      <!-- marker-1-1 -->
+      <a-marker id ="marker-1-1" preset="hiro">
+        <a-sound id="sound-1-1" src="src: url(assets/book1/page1/sound.mp3)" autoplay="true">
         </a-sound>
         <a-entity rotation="-90 0 0">
           <a-image
@@ -78,13 +60,13 @@
             position="0 2.5 0"
             rotation="0 0 0"
             scale="10 10 10"
+            soundhandler1-1
           ></a-image>
           <a-image
             src="#b1-p1-o1"
             position="0 2.5 0.3"
             rotation="0 0 0"
             scale="10 10 10"
-
             animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
           >
           </a-image>
@@ -93,11 +75,12 @@
             position="0 2.5 0.3"
             rotation="0 0 0"
             scale="10 10 10"
-
             animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
           >
           </a-image>
       </a-entity>
+
+      
       </a-marker>
       <a-marker preset="kanji">
         <!-- <a-sound src="src: url(assets/book1/page1/sound.mp3)" autoplay="true"> -->
