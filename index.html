@@ -1,3 +1,17 @@
+<!--
+assets id : b${n}-p${n}-{bg, ob, so}
+sound id : sound-b${n}-p${n}
+marker id : marker-b${n}-p${n}
+soundHandler : soundhandler${book}-${page}
+-->
+
+<!--
+animation-rotation-y : x축으로 회전
+animation-rotation-z : x축으로 회전
+animation-scale : 양옆으로 10%만큼 커졌다 작아지기
+animation-jump : 점프
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,98 +20,141 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <!-- rain or snow-->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
-      <!-- 모바일, pc버전 다르게 나타내는 코드
-      <script type="text/javascript">
-
-        function isMobile(){
-          var UserAgent = navigator.userAgent;
-
-          if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)  {
-            return true;
-          }
-          else{
-            return false;
-          }
-        }
-
-        if(isMobile()){
-          location.href = "/mobile/index.html";	//모바일페이지
-        }else{
-          location.href = "/main.html";		//PC용 페이지
-        }
-        </script>
-    -->
-
       <!-- assets -->
       <a-assets>
-        <img id="b1-p1-bg" src="assets/book1/page1/background.png" />
-        <img id="b1-p1-bg2" src="assets/book1/page1/background2.png" />
-        <img id="b1-p1-ob" src="assets/book1/page1/object.png" />
-        <img id="b1-p1-o1" src="assets/book1/page1/object1.png" />
-        <img id="b1-p1-o2" src="assets/book1/page1/object2.png" />
-
+        <!-- sample -->
+        <img id="sa-p1-bg" src="assets/sample/page1/background.png" />
+        <img id="sa-p1-ob" src="assets/sample/page1/object.png" />
+        <img id="sa-p2-bg" src="assets/sample/page2/background.png" />
+        <img id="sa-p2-ob" src="assets/sample/page2/object.png" />
+        <img id="sa-p3-bg" src="assets/sample/page3/background.png" />
+        <img id="sa-p3-ob" src="assets/sample/page3/object.png" />
+        <img id="sa-p4-bg" src="assets/sample/page4/background.png" />
+        <img id="sa-p4-ob" src="assets/sample/page4/object.png" />
+        <img id="sa-p5-bg" src="assets/sample/page5/background.png" />
+        <img id="sa-p5-ob" src="assets/sample/page5/object.png" />
+        <img id="sa-p6-bg" src="assets/sample/page6/background.png" />
+        <img id="sa-p6-ob" src="assets/sample/page6/object.png" />
+        <img id="sa-p7-bg" src="assets/sample/page7/background.png" />
+        <img id="sa-p7-ob" src="assets/sample/page7/object.png" />
+        <img id="sa-p8-bg" src="assets/sample/page8/background.png" />
+        <img id="sa-p8-ob" src="assets/sample/page8/object.png" />
         <audio
-          id="b1-p1-so"
-          src="assets/book1/page1/sound.mp3"
+          id="sa-p1-so"
+          src="assets/sample/page1/sound.mp3"
           type="audio/mp3"
           preload="auto"
         ></audio>
+        <audio
+          id="sa-p2-so"
+          src="assets/sample/page2/sound.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="sa-p3-so"
+          src="assets/sample/page3/sound.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="sa-p4-so"
+          src="assets/sample/page4/sound.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="sa-p5-so"
+          src="assets/sample/page5/sound.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="sa-p6-so"
+          src="assets/sample/page6/sound.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="sa-p7-so"
+          src="assets/sample/page7/sound.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="sa-p8-so"
+          src="assets/sample/page8/sound.mp3"
+          type="audio/mp3"
+          preload="auto"
+        ></audio>
+
+        <!-- book1 -->
+        <!-- book2 -->
+        <!-- book3 -->
+        <!-- book4 -->
+        <!-- book5 -->
+        <!-- book6 -->
+        <!-- book7 -->
+        <!-- book8 -->
+        <!-- book9 -->
+        <!-- book10 -->
       </a-assets>
 
-      <!-- soundHandler.js -->
+      <!-- import script -->
       <script type="text/javascript" src="/scripts/soundHandler.js"></script>
+      <script type="text/javascript" src="/scripts/animation.js"></script>
 
-      <!-- marker-1-1 -->
-      <a-marker id ="marker-1-1" preset="hiro">
-        <a-sound id="sound-1-1" src="src: url(assets/book1/page1/sound.mp3)" autoplay="true">
+      <!-- sample -->
+      <!-- sample - page 1 -->
+      <a-marker id="marker-sa-p1" preset="hiro">
+        <a-sound id="sound-sa-p1" src="#sa-p1-so" autoplay="false" soundhandler>
         </a-sound>
-        <a-entity rotation="-90 0 0">
+
+        <a-entity rotation="0 0 0">
           <a-image
-            src="#b1-p1-bg2"
+            src="#sa-p1-bg"
             position="0 2.5 0"
             rotation="0 0 0"
-            scale="10 10 10"
-            soundhandler1-1
+            scale="5 5 5"
           ></a-image>
           <a-image
-            src="#b1-p1-o1"
-            position="0 2.5 0.3"
+            src="#sa-p1-ob"
+            position="0 2.5 0.5"
             rotation="0 0 0"
-            scale="10 10 10"
-            animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
+            scale="5 5 5"
+            animation-jump
+            animation-rotation
           >
           </a-image>
-          <a-image
-            src="#b1-p1-o2"
-            position="0 2.5 0.3"
-            rotation="0 0 0"
-            scale="10 10 10"
-            animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
-          >
-          </a-image>
-      </a-entity>
-
-      
+        </a-entity>
       </a-marker>
-      <a-marker preset="kanji">
-        <!-- <a-sound src="src: url(assets/book1/page1/sound.mp3)" autoplay="true"> -->
-        </a-sound>
+
+      <!-- sample - page 2 -->
+      <a-marker id="marker-sa-p2" preset="kanji">
+        <a-sound
+          id="sound-sa-p2"
+          src="#sa-p2-so"
+          autoplay="false"
+          soundhandler
+        ></a-sound>
         <a-image
-          src="#b1-p1-bg"
+          src="#sa-p2-bg"
           position="0 2.5 0"
           rotation="0 0 0"
           scale="5 5 5"
         ></a-image>
         <a-image
-          src="#b1-p1-ob"
-          position="0 2.5 0.3"
+          src="#sa-p2-ob"
+          position="0 2.5 0.5"
           rotation="0 0 0"
           scale="5 5 5"
-          animation="property:scale; dir:alternate; dur:1000; to: 5.5 5 5; easing:easeInOutQuad; loop:true;"
-          animation__jump="property:position; dir:alternate; dur:1000; to : 0 5 0.3; easing:easeInOutQuad; loop:true;"
+          animation-scale
+          animation-rotation-z
         >
         </a-image>
       </a-marker>
@@ -106,11 +163,3 @@
     </a-scene>
   </body>
 </html>
-
-<!-- sound url
-  free sound에 올려야 함
-  이미지는 imgur에..
-  https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav
-
-  https://drive.google.com/file/d/1axhcotu8NpitGdegKNxBE1NZkbMlH8We/view?usp=sharing
--->
