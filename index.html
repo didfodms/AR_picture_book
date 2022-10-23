@@ -24,7 +24,10 @@ animation-jump : 점프
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
-    <a-scene embedded arjs>
+    <a-scene
+      embedded
+      arjs="detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_9_3;"
+    >
       <!-- assets -->
       <a-assets>
         <!-- sample -->
@@ -111,7 +114,7 @@ animation-jump : 점프
 
       <!-- sample -->
       <!-- sample - page 1 -->
-      <a-marker id="marker-sa-p1" preset="hiro">
+      <a-marker id="marker-sa-p1" type="barcode" value="0">
         <a-sound id="sound-sa-p1" src="#sa-p1-so" autoplay="false" soundhandler>
         </a-sound>
 
@@ -135,7 +138,7 @@ animation-jump : 점프
       </a-marker>
 
       <!-- sample - page 2 -->
-      <a-marker id="marker-sa-p2" preset="kanji">
+      <a-marker id="marker-sa-p2" type="barcode" value="1">
         <a-sound
           id="sound-sa-p2"
           src="#sa-p2-so"
@@ -157,6 +160,150 @@ animation-jump : 점프
           animation-rotation-z
         >
         </a-image>
+      </a-marker>
+
+      <!-- sample - page 3 -->
+      <a-marker id="marker-sa-p3" type="barcode" value="2">
+        <a-sound id="sound-sa-p3" src="#sa-p3-so" autoplay="false" soundhandler>
+        </a-sound>
+
+        <a-entity rotation="0 0 0">
+          <a-image
+            src="#sa-p3-bg"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="5 5 5"
+          ></a-image>
+          <a-image
+            src="#sa-p3-ob"
+            position="0 2.5 0.5"
+            rotation="0 0 0"
+            scale="5 5 5"
+            animation-jump
+            animation-rotation
+          >
+          </a-image>
+        </a-entity>
+      </a-marker>
+
+      <!-- sample - page 4 -->
+      <a-marker id="marker-sa-p4" type="barcode" value="3">
+        <a-sound id="sound-sa-p4" src="#sa-p4-so" autoplay="false" soundhandler>
+        </a-sound>
+
+        <a-entity rotation="0 0 0">
+          <a-image
+            src="#sa-p4-bg"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="5 5 5"
+          ></a-image>
+          <a-image
+            src="#sa-p4-ob"
+            position="0 2.5 0.5"
+            rotation="0 0 0"
+            scale="5 5 5"
+            animation-jump
+            animation-rotation
+          >
+          </a-image>
+        </a-entity>
+      </a-marker>
+
+      <!-- sample - page 5 -->
+      <a-marker id="marker-sa-p5" type="barcode" value="4">
+        <a-sound id="sound-sa-p5" src="#sa-p5-so" autoplay="false" soundhandler>
+        </a-sound>
+
+        <a-entity rotation="0 0 0">
+          <a-image
+            src="#sa-p5-bg"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="5 5 5"
+          ></a-image>
+          <a-image
+            src="#sa-p5-ob"
+            position="0 2.5 0.5"
+            rotation="0 0 0"
+            scale="5 5 5"
+            animation-jump
+            animation-rotation
+          >
+          </a-image>
+        </a-entity>
+      </a-marker>
+
+      <!-- sample - page 6 -->
+      <a-marker id="marker-sa-p6" type="barcode" value="5">
+        <a-sound id="sound-sa-p6" src="#sa-p6-so" autoplay="false" soundhandler>
+        </a-sound>
+
+        <a-entity rotation="0 0 0">
+          <a-image
+            src="#sa-p6-bg"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="5 5 5"
+          ></a-image>
+          <a-image
+            src="#sa-p6-ob"
+            position="0 2.5 0.5"
+            rotation="0 0 0"
+            scale="5 5 5"
+            animation-jump
+            animation-rotation
+          >
+          </a-image>
+        </a-entity>
+      </a-marker>
+
+      <!-- sample - page 7 -->
+      <a-marker id="marker-sa-p7" type="barcode" value="6">
+        <a-sound id="sound-sa-p7" src="#sa-p7-so" autoplay="false" soundhandler>
+        </a-sound>
+
+        <a-entity rotation="0 0 0">
+          <a-image
+            src="#sa-p7-bg"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="5 5 5"
+          ></a-image>
+          <a-image
+            src="#sa-p7-ob"
+            position="0 2.5 0.5"
+            rotation="0 0 0"
+            scale="5 5 5"
+            animation-jump
+            animation-rotation
+          >
+          </a-image>
+        </a-entity>
+      </a-marker>
+
+      <!-- sample - page 8 -->
+      <a-marker id="marker-sa-p8" type="barcode" value="7">
+        <a-sound id="sound-sa-p8" src="#sa-p8-so" autoplay="false" soundhandler>
+        </a-sound>
+
+        <a-entity rotation="0 0 0">
+          <a-image
+            src="#sa-p8-bg"
+            position="0 2.5 0"
+            rotation="0 0 0"
+            scale="5 5 5"
+          ></a-image>
+          <a-image
+            src="#sa-p8-ob"
+            position="0 2.5 0.5"
+            rotation="0 0 0"
+            scale="5 5 5"
+            animation-jump
+            animation-rotation
+          >
+          </a-image>
+        </a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
