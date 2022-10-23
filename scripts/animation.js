@@ -37,8 +37,9 @@ AFRAME.registerComponent("animation-rotation-y", {
 
     this.entity.setAttribute("animation__rotation", {
       property: "rotation",
-      from: "0 0 0",
-      to: "0 360 0",
+      from: "0 -20 0",
+      to: "0 20 0",
+      dir: "alternate",
       dur: "1000",
       loop: "true",
       easing: "linear",
@@ -53,8 +54,9 @@ AFRAME.registerComponent("animation-rotation-z", {
 
     this.entity.setAttribute("animation__rotation", {
       property: "rotation",
-      from: "0 0 0",
-      to: "360 0 0",
+      from: "-20 0 0",
+      to: "20 0 0",
+      dir: "alternate",
       dur: "1000",
       loop: "true",
       easing: "linear",
