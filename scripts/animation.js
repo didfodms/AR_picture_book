@@ -21,11 +21,59 @@ AFRAME.registerComponent("animation-scale", {
 
     this.entity.setAttribute("animation__scale", {
       property: "scale",
+      to: "6 6 5",
+      dir: "alternate",
+      dur: "1000",
+      loop: "true",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// animation-scale-updown //
+AFRAME.registerComponent("animation-scale-updown", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__scale", {
+      property: "scale",
+      to: "5 6 5",
+      dir: "alternate",
+      dur: "1000",
+      loop: "true",
+      easing: "easeInOutQuad",
+    });
+  },
+});
+
+// animation-scale-side //
+AFRAME.registerComponent("animation-scale-side", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__scale", {
+      property: "scale",
       to: "6 5 5",
       dir: "alternate",
       dur: "1000",
       loop: "true",
       easing: "easeInOutQuad",
+    });
+  },
+});
+
+// animation-rotation //
+AFRAME.registerComponent("animation-rotation", {
+  init: function () {
+    this.entity = this.el;
+
+    this.entity.setAttribute("animation__rotation", {
+      property: "rotation",
+      from: "0 0 0",
+      to: "0 0 360",
+      dur: "1000",
+      loop: "true",
+      easing: "linear",
     });
   },
 });
@@ -37,12 +85,12 @@ AFRAME.registerComponent("animation-rotation-y", {
 
     this.entity.setAttribute("animation__rotation", {
       property: "rotation",
-      from: "0 -20 0",
-      to: "0 20 0",
+      from: "0 -10 0",
+      to: "0 10 0",
       dir: "alternate",
       dur: "1000",
       loop: "true",
-      easing: "linear",
+      easing: "easeInOutQuad",
     });
   },
 });
@@ -54,12 +102,12 @@ AFRAME.registerComponent("animation-rotation-z", {
 
     this.entity.setAttribute("animation__rotation", {
       property: "rotation",
-      from: "-20 0 0",
-      to: "20 0 0",
+      from: "0 0 -20",
+      to: "0 0 20",
       dir: "alternate",
       dur: "1000",
       loop: "true",
-      easing: "linear",
+      easing: "easeInOutQuad",
     });
   },
 });
