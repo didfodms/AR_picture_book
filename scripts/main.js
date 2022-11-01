@@ -9,7 +9,7 @@ soundHandler : soundhandler${book}-${page}
 const bookLength = 8;
 const bookPageLength = 8;
 
-const animationJumpTagList = ["b1-p1", "b1-p2"];
+const animationJumpTagList = ["b1-p1", "b1-p2", "b2-p1", "b2-p2"];
 const animationScaleTagList = ["b1-p3", "b1-p4"];
 const animationRotationTagList = ["b1-p5", "b1-p6"];
 
@@ -79,6 +79,7 @@ const Init = () => {
       aObjectTag.setAttribute("position", "0 2.5 0");
       aObjectTag.setAttribute("rotation", "0 0 0");
       aObjectTag.setAttribute("scale", "5 5 5");
+
       // add animation
       if (animationJumpTagList.includes(`b${bookCount}-p${bookPageCount}`)) {
         aObjectTag.setAttribute("animation-jump", "");
@@ -104,27 +105,3 @@ const Init = () => {
 };
 
 window.onload = Init;
-
-/*
-해당 애니메이션을 가지는 태그라면 setAttribute하기
-if(animationJumpTagList.indexOf(해당아이디) !== -1) {
-
-}
-const animationJumpTagList = [];
-const animationScaleTagList = [];
-const animationRotationTagList = [];
-
-for(let i = 0; i < animationJumpTagList.length; i++) {
-  const animationAObjectTag = sceneEl.querySelector(`${animationJumpTagList[i]}`);
-  animationAObjectTag.setAttribute('animation-jump', '');
-}
-
-for(let i = 0; i < animationScaleTagList.length; i++){
-  const animationAObjectTag = sceneEl.querySelector(`${animationJumpTagList[i]}`);
-  animationAObjectTag.setAttribute('animation-jump', '');
-}
-
-for(let i = 0; i < animationRotationTagList.length; i++) {
-
-}
-*/
