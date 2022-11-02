@@ -6,10 +6,10 @@ soundHandler : soundhandler${book}-${page}
 */
 
 // constant - book 수 설정, page 수 설정 //
-const bookLength = 8;
+const bookLength = 1;
 const bookPageLength = 8;
 
-const animationJumpTagList = ["b1-p1", "b1-p2", "b2-p1", "b2-p2"];
+const animationJumpTagList = ["b1-p1", "b1-p2"];
 const animationScaleTagList = ["b1-p3", "b1-p4"];
 const animationRotationTagList = ["b1-p5", "b1-p6"];
 
