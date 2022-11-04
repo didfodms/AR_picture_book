@@ -4,7 +4,7 @@ const bookPageLength = 8;
 const sceneEl = document.querySelector("a-scene");
 const assetsEl = sceneEl.querySelector("a-assets");
 
-for (let bookCount = 1; bookCount <= bookLength; bookCount++) {
+for (let bookCount = 0; bookCount <= bookLength; bookCount++) {
   for (
     let bookPageCount = 1;
     bookPageCount <= bookPageLength;
