@@ -85,12 +85,11 @@ AFRAME.registerComponent("animation-rotation-y", {
 
     this.entity.setAttribute("animation__rotation", {
       property: "rotation",
-      from: "0 -10 0",
-      to: "0 10 0",
-      dir: "alternate",
-      dur: "1000",
+      from: "0 0 0",
+      to: "0 360 0",
+      dur: "4000",
       loop: "true",
-      easing: "easeInOutQuad",
+      easing: "linear",
     });
   },
 });
