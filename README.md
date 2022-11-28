@@ -1,7 +1,7 @@
 # Picture Book in AR
 + Built AR Web using ar.js, aframe based on HTML, Javascript
-+ Used by Education Program about Picture Book
 + Developed and Added Assets Animation
++ Used by Education Program about Picture Book
 
 # Activity
 ## PC
